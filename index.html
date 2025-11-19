@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Interest Webpage</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#food">Food</a></li>
+                <li><a href="#novels">Novels</a></li>
+                <li><a href="#games">Games</a></li>
+                <li><a href="#watch">Watch</a></li>
+                <li><a href="#comics">Comics</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="info">
+            <h1>Personal Interest</h1>
+            <p>A glimpse into the things that fuel my imagination and joy</p>
+            <button id="explore" onclick="explore('Welcome', ' A website made using HTML, CSS, Javascript that has 5 sections to explore about the personal interest of the creator of the website')">Explore</button>
+        </div>
+        <!-- Food Section -->
+        <section id="food">
+            <div class="label">
+                <h2>Food</h2>
+                <p>A journey through taste and texture</p>
+            </div>
+            <figure>
+                <img src="Images/takoyaki.jpeg" alt="Takoyaki">
+                <figcaption>Takoyaki</figcaption>
+            </figure>
+            <figure>
+                <img src="Images/ramen.jpeg" alt="Ramen">
+                <figcaption>Ramen</figcaption>
+            </figure>
+            <figure>
+                <img src="Images/chicken.jpeg" alt="Chicken">
+                <figcaption>Chicken</figcaption>
+            </figure>
+            <figure>                
+                <img src="Images/takoyaki1.jpeg" alt="Takoyaki">
+                <figcaption>Takoyaki</figcaption>
+            </figure>
+            <figure>                
+                <img src="Images/chami.jpeg" alt="Chami">
+                <figcaption>Chami</figcaption>
+            </figure>
+            <figure>
+                <img src="Images/ramen1.jpeg" alt="Ramen">
+                <figcaption>Ramen</figcaption>
+            </figure>
+            <button class="prev" onclick="prevSlide()">&#10094</button>
+            <button class="next" onclick="nextSlide()">&#10095</button>
+        </section>
+
+        <!-- Novels Section -->
+        <section id="novels">
+            <div class="label">
+                <h2>Novels</h2>
+                <p>Dive into worlds written in words</p>
+            </div>
+            <div class="read-box">
+                <div class="button-box">
+                    <button>Chinese</button>
+                    <button>Japanese</button>
+                    <button>Korean</button>
+                </div>
+                <figure>
+                    <img src="Images/eternal.webp" alt="A Will Eternal">
+                    <figcaption>A Will Eternal</figcaption>
+                </figure>
+                <figure>
+                    <img src="Images/stellar.jpg" alt="Stellar Transformation">
+                    <figcaption>Stellar Transformation</figcaption>
+                </figure>
+                <figure>
+                    <img src="Images/caught.png" alt="I Was Caught up">
+                    <figcaption>I Was Caught up</figcaption>
+                </figure>
+                <figure>
+                    <img src="Images/demon.webp" alt="Now I'm a Demon Lord">
+                    <figcaption>Now I'm a Demon Lord</figcaption>
+                </figure>
+                <figure>
+                    <img src="Images/tbate.webp" alt="The Beginning After The End">
+                    <figcaption>The Beginning After The End</figcaption>
+                </figure>
+                <figure>
+                    <img src="Images/player.jpg" alt="Player Who Returned 10,000 Years Later">
+                    <figcaption>Player Who Returned 10,000 Years Later</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- Games Section -->
+        <section id="games">
+            <div class="label">
+                <h2>Games</h2>
+                <p>Escape into the game world</p>
+            </div>
+            <div class="games-box">
+                <div class="minecraft">
+                    <figure>
+                        <img src="Images/minecraft.jpg" alt="Minecraft picture">
+                        <figcaption>Minecraft</figcaption>
+                    </figure>
+                </div>
+                <div class="valorant">
+                    <figure>
+                        <img src="Images/valorant.jpg" alt="Minecraft picture">
+                        <figcaption>Valorant</figcaption>
+                    </figure>
+                </div>
+                <div class="league">
+                    <figure>
+                        <img src="Images/league.webp" alt="Minecraft picture">
+                        <figcaption>League of Legends</figcaption>
+                    </figure>
+                </div>
+                <div class="mobile">
+                    <figure>
+                        <img src="Images/mobile.jpg" alt="Minecraft picture">
+                        <figcaption>Mobile Legends</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- Watch Section -->
+        <section id="watch">
+            <div class="label">
+                <h2>Watch</h2>
+                <p>See stories come to life</p>
+            </div>
+            <h3>Anime</h3>
+            <div class="anime">
+                <figure>
+                    <img src="Images/slime.jpg" alt="That Time I Got Reincarnated as a Slime">
+                    <figcaption>Slime Tensei</figcaption>
+                </figure>
+                <figure>
+                    <img src="Images/april.jpg" alt="Your Lie in April">
+                    <figcaption>Your Lie in April</figcaption>
+                </figure>
+                <figure>
+                    <img src="Images/frieren.png" alt="Frieren">
+                    <figcaption>Frieren</figcaption>
+                </figure>
+                <figure>
+                    <img src="Images/slayer.png" alt="Demon Slayer">
+                    <figcaption>Demon Slayer</figcaption>
+                </figure>
+                <figure>
+                    <img src="Images/oregairu.jpg" alt="Oregairu">
+                    <figcaption>Oregairu</figcaption>
+                </figure>
+            </div>
+            <h3>Kdrama</h3>
+            <div class="kdrama">
+                <figure>
+                    <img src="Images/sleeping.jpg" alt="While You Were Sleeping">
+                    <figcaption>While You Were Sleeping</figcaption>
+                </figure>
+                <figure>
+                    <img src="Images/crash.jpg" alt="Crash Landing On You">
+                    <figcaption>Crash Landing On You</figcaption>
+                </figure>
+                <figure>
+                    <img src="Images/descendants.jpg" alt="Descendants of the Sun">
+                    <figcaption>Descendants of the Sun</figcaption>
+                </figure>
+                <figure>
+                    <img src="Images/summer.webp" alt="Our Beloved Summer">
+                    <figcaption>Our Beloved Summer</figcaption>
+                </figure>
+                <figure>
+                    <img src="Images/goblin.jpg" alt="Goblin">
+                    <figcaption>Goblin</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- Comic Section -->
+        <section id="comics">
+            <div class="label">
+                <h2>Comics</h2>
+                <p>Stories that leap off the page</p>
+            </div>
+            <div class="read-box comics">
+                <div class="button-box">
+                    <button>Manhua</button>
+                    <button>Manga</button>
+                    <button>Manhwa</button>
+                </div>
+                <figure>
+                    <img src="Images/apotheosis.jpeg" alt="Apotheosis">
+                    <figcaption>Apotheosis</figcaption>
+                </figure>
+                <figure>
+                    <img src="Images/martial.webp" alt="Martial Peak">
+                    <figcaption>Martial Peak</figcaption>
+                </figure>
+                <figure>
+                    <img src="Images/seraph.webp" alt="Seraph of the End">
+                    <figcaption>Seraph of the End</figcaption>
+                </figure>
+                <figure>
+                    <img src="Images/frieren-manga.webp" alt="Frieren">
+                    <figcaption>Frieren</figcaption>
+                </figure>
+                <figure>
+                    <img src="Images/estate.webp" alt="The Greatest Estate Developer">
+                    <figcaption>The Greatest Estate Developer</figcaption>
+                </figure>
+                <figure>
+                    <img src="Images/pick.jpg" alt="Pick Me Up, Infinite Gacha">
+                    <figcaption>Pick Me Up, Infinite Gacha</figcaption>
+                </figure>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pop Up Code -->
+    <div class="popup" id="popup">
+        <div class="popupContent" id="popupContent">
+            <button class="close-btn" id="closeBtn" onclick="closePopup()">&times;</button>
+            <div class="popupBody" id="popupBody"></div>
+        </div>
+    </div>
+
+
+    <!-- Back to Top Button -->
+    <button id="scrollTop" title="Go to top">↑</button>
+
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

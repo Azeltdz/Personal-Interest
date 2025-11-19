@@ -1,0 +1,493 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth; /* Smoothly animate the scroll position, instead of a straight jump */
+    text-decoration: none;
+}
+
+:root {
+    --text: #050315;
+    --background: #fbfbfe;
+    --primary: #09097b;
+    --secondary: #d7edfe;
+    --accent: #00D4FF;
+    --paragraph: #A8C3D9;
+}
+
+html {
+    font-size: 62.5%; /* Makes it easier to express pixels in rem */
+    overflow-x: hidden; /* Hide Horizontal Scroll */
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+    background: hsla(197, 100%, 7%, 0.5);
+    background: linear-gradient(135deg, rgba(0, 26, 36, 0.9) 0%, 
+                                        rgba(9, 9, 121, 0.9) 50%, 
+                                        rgba(0, 212, 255, 1) 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 100vh;
+}
+
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(6px);
+}
+
+h1 {
+    font-family: "Alfa Slab One", serif;
+    font-size: 8.1rem;
+    font-weight: 800;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.13em;
+    margin-bottom: 2rem;
+    text-shadow: 0 8px 15px rgba(0, 0, 0, 0.7);
+}
+
+section {
+    position: relative;
+    height: 100dvh;
+    margin: 10rem 2rem 0;
+    padding-top: 6rem;
+    text-align: center;
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem 1rem;
+}
+
+.navbar ul{
+    display: flex;
+    list-style-type: none;
+}
+
+.navbar a {
+    color: var(--background);
+    font-size: 2rem;
+    font-weight: 500;
+    display: block;
+    padding: 0.5rem 3rem;
+    transition: 0.2s ease-out;
+}
+
+.navbar a:hover {
+    color: var(--accent);
+    transform: translateY(20%) scale(1.2);
+}
+
+/* Home Page */
+.info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.info p {
+    font-family: "Alfa Slab One", serif;
+    font-size: 2.3rem;
+    text-transform: uppercase;
+    color: var(--paragraph);
+    text-shadow: 0 8px 15px rgba(0, 0, 0, 0.7);
+}
+
+.info button {
+    color: var(--text);
+    background: var(--paragraph);
+    padding: 0.5em;
+    font-size: 2rem;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 5rem;
+    border: 3px solid var(--accent);
+    border-radius: 2rem;
+    width: 10%;
+    transition: 0.3s ease-out;
+    box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.7);
+}
+
+.info button:hover{
+    cursor: pointer;
+    transform: translateY(25%);
+    background: none;
+    width: 13%;
+    border: 3px solid var(--accent);
+    color: var(--background);
+}
+
+
+/* Label */
+.label {
+    border: 3px solid var(--primary);
+    margin: 2rem auto;
+    max-width: 50%;
+    border-radius: 2rem;
+    background: var(--secondary);
+    box-shadow: 4px 3px 10px var(--accent), -3px -4px 10px var(--accent);
+    animation: glow 5s infinite ease alternate;
+    padding: 1.1rem;
+}
+
+h2 {
+    font-size: 4rem;
+    font-weight: 600;
+    color: var(--text);
+    text-transform: uppercase;
+    text-align: center;
+}
+
+p {
+    font-size: 2rem;
+    color: var(--text);
+}
+
+figcaption {
+    font-size: 2rem;
+    color: var(--paragraph);
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+figure:hover figcaption {
+    color: var(--text);
+}
+
+@keyframes glow {
+    40% {
+        box-shadow: 4px 3px 10px var(--paragraph), -3px -4px 10px var(--paragraph);
+    }
+    70% {
+        box-shadow: 5px 4px 10px var(--primary), -3px -3px 10px var(--primary);
+    }
+    100% {
+        box-shadow: 4px 3px 10px var(--secondary), -3px -4px 10px var(--secondary);
+    }
+}
+
+/* Food Section */
+#food figure {
+    border-radius: 2rem;
+    width: 70%;
+    height: 70%;
+    margin-inline: auto;
+    background: var(--primary);
+    transition: all 0.4s ease-out;
+    display: none;
+}
+
+#food img {
+    margin: 2rem;
+    width: 95%;
+    height: 80%;
+    object-fit: cover;
+    border-radius: inherit;
+    border: 3px solid var(--primary);
+}
+
+#food figure:hover {
+    transform: translateY(6%);
+}
+
+#food figure.displaySlide {
+    display: block;
+    animation: fade 0.35s;
+}
+
+#food button {
+    position: absolute;
+    top: 50%;
+    font-size: 3rem;
+    padding: 1rem;
+    border: 3px solid var(--primary);
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    height: 15%;
+    opacity: 0;
+    transform: scale(0);
+}
+.prev {
+    left: 15.5%;
+}
+.next {
+    right: 15.5%;
+}
+
+#food figure:hover ~ button,
+#food button:hover {
+    opacity: 1;
+    transform: scale(1);
+    transition-delay: 0.2s;
+    background: var(--secondary);
+}
+
+#food button:hover {
+    background: var(--accent);
+}
+
+#food figure:hover,
+.read-box figure:hover,
+.games-box > div:hover {
+    cursor: pointer;
+    border: 3px solid var(--primary);
+    background: var(--secondary);
+}
+
+@keyframes fade {
+    from {opacity: 0.1;}
+    to {opacity: 1;}
+}
+
+/* Novel Section */
+.read-box {
+    padding: 2rem;
+    display: flex;
+}
+
+.button-box {
+    min-width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.button-box button {
+    width: 75%;
+    border: 3px solid var(--primary);
+    margin: 3rem auto;
+    padding: 2rem;
+    font-size: 2rem;
+    color: var(--background);
+    background: var(--primary);
+    transition: all 0.3s ease-out;
+    border-radius: 0 50%;
+}
+
+.button-box button:hover {
+    cursor: pointer;
+    color: var(--text);
+    transform: translateY(-20%);
+    background: var(--secondary);
+    border-radius: 50% 0;
+}
+
+.button-box button.active {
+    background: var(--accent);
+    color: var(--text);
+    border-radius: 50% 0;
+}
+
+.read-box figure {
+    border: 3px solid var(--primary);
+    background: var(--primary);
+    border-radius: 2rem;
+    width: 23%;
+    aspect-ratio: 3 / 4;
+    margin: auto;
+    transition: all 0.3s ease-out;
+}
+
+.read-box figure img {
+    margin: 2rem;
+    width: 90%;
+    height: 90%;
+    object-fit: cover;
+    border-radius: inherit;
+    border: 3px solid var(--primary);
+}
+
+.read-box figure:hover{
+    transform: translateY(-3%) translateX(5%);
+}
+
+/* Games Section */
+.games-box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 3rem;
+    padding: 3rem;
+}
+
+.games-box > div {
+    width: 100%;
+    border-radius: 1rem;
+    min-height: 40vh;
+    border: 3px solid var(--primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.4s ease-out;
+}
+
+.games-box img {
+    width: 50%;
+    border: 3px solid var(--primary);
+    border-radius: 1rem;
+}
+
+.games-box figure {
+    opacity: 0;
+}
+
+.minecraft {
+    background: url("Images/minecraft.jpg") no-repeat;
+    background-size: cover;
+}
+.valorant {
+    background: url("Images/valorant.jpg") no-repeat;
+    background-size: cover;
+}
+.league {
+    background: url("Images/league.webp") no-repeat;
+    background-size: cover;
+}
+.mobile {
+    background: url("Images/mobile.jpg") no-repeat;
+    background-size: cover;
+}
+
+.games-box > div:hover {
+    transform: translateY(-5%);
+}
+
+.games-box > div:hover figure {
+    opacity: 1;
+}
+
+/* Watch Section */
+h3 {
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--text);
+    text-align: left;
+}
+
+#watch > div:not(:first-child) {
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+    min-height: 30vh;
+    margin: 1rem;
+}
+
+#watch > div figure {
+    border: 3px solid var(--primary);
+    margin-inline: auto;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 1rem;
+    background: var(--secondary);
+    transition: all 0.3s ease;
+}
+
+#watch > div img {
+    margin: 1rem;
+    width: 90%;
+    height: 100%;
+    object-fit: cover;
+    border: 3px solid var(--primary);
+    border-radius: 0.5rem;
+}
+
+#watch > div figure:hover {
+    cursor: pointer;
+    transform: scale(0.9);
+}
+
+/* Comic Section */
+.comics {
+    flex-direction: row-reverse;
+}
+
+/* Pop Up */
+.popup {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(6px);
+    z-index: 1000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.popupContent {
+    border: 3px solid var(--primary);
+    border-radius: 2rem;
+    background: var(--secondary);
+    width: 45%;
+    height: 40%;
+    padding: 3rem;
+    box-shadow: 4px 3px 10px var(--accent), -3px -4px 10px var(--accent);
+    position: relative;
+    animation: popup 0.3s ease;
+}
+
+
+.close-btn {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: none;
+    border-radius: 50%;
+    background: var(--primary);
+    color: var(--background);
+    width: 3rem;
+    height: 3rem;
+    font-size: 2rem;
+    margin: 1rem;
+    transition: all 0.3s ease;
+}
+
+.close-btn:hover {
+    border: 3px solid var(--primary);
+    background: var(--secondary);
+    transform: rotate(90deg);
+    color: var(--text);
+}
+
+@keyframes popup {
+    from { transform: scale(0); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* Scroll Top Button */
+
+#scrollTop {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 3rem;
+    color: var(--background);
+    background: var(--primary);
+    border: none;
+    border-radius: 50%;
+    width: 2em;
+    height: 2em;
+    cursor: pointer;
+    font-size: 2rem;
+    z-index: 1000;
+    display: none;
+    transition: 0.3s ease-out;
+}
+
+#scrollTop:hover {
+    background: none;
+    border: 3px solid var(--accent);
+    color: var(--accent);
+    transform: translateY(-50%) scale(1.25);
+}
