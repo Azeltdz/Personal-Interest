@@ -12,6 +12,8 @@ function explore(title, description) {
     popupBody.innerHTML = `
         <h3>${title}, ${name}</h3>
         <p>${description}</p>
+        <br>
+        <p> Created by Azelt </p>
         `;
     document.getElementById('popup').style.display = 'flex';
 }
@@ -46,7 +48,7 @@ function showSlide(index){
     if(index >= slides.length){
         slideIndex = 0;
     } else if (index < 0){
-        slideIndex = slideIndex.length - 1;
+        slideIndex = slide.length - 1;
     }
 
     slides.forEach(slide =>{ 
@@ -59,6 +61,9 @@ function showSlide(index){
 function prevSlide(){
     clearInterval(intervalId);
     slideIndex--;
+    if (slideIndex < 0) {
+        slideIndex = slides.length - 1;
+    }
     showSlide(slideIndex);
 }
 
