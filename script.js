@@ -1,10 +1,18 @@
 // Pop Up Button
-function explore(title, description){
+function explore(title, description) {
     const name = prompt("What is your name?");
+    
+    while (!name) {
+        name = prompt("Please enter your name:");
+        if (name === null) {
+            return;
+        }
+    }
     const popupBody = document.getElementById("popupBody");
     popupBody.innerHTML = `
-        <h3> ${title}, ${name} </h3>
-        <p> ${description} </p>`;
+        <h3>${title}, ${name}</h3>
+        <p>${description}</p>
+        `;
     document.getElementById('popup').style.display = 'flex';
 }
 
