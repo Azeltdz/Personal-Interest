@@ -1,6 +1,6 @@
 // Pop Up Button
 function explore(title, description) {
-    const name = prompt("What is your name?");
+    let name = prompt("What is your name?");
     
     while (!name) {
         name = prompt("Please enter your name:");
@@ -8,14 +8,16 @@ function explore(title, description) {
             return;
         }
     }
+
     const popupBody = document.getElementById("popupBody");
+    document.getElementById('popup').style.display = 'flex';
     popupBody.innerHTML = `
         <h3>${title}, ${name}</h3>
+        <br>
         <p>${description}</p>
         <br>
         <p> Created by Azelt </p>
         `;
-    document.getElementById('popup').style.display = 'flex';
 }
 
 // Close Popup Button
