@@ -61,7 +61,7 @@ h1 {
 
 section {
     position: relative;
-    height: 100dvh;
+    min-height: 100dvh;
     margin: 10rem 2rem 0;
     padding-top: 6rem;
     text-align: center;
@@ -209,7 +209,6 @@ figure:hover figcaption {
 #food figure {
     border-radius: 2rem;
     width: 70%;
-    height: 70%;
     margin-inline: auto;
     background: var(--primary);
     transition: all 0.4s ease-out;
@@ -219,7 +218,6 @@ figure:hover figcaption {
 #food img {
     margin: 2rem 0;
     width: 90%;
-    height: 80%;
     object-fit: cover;
     border-radius: inherit;
     border: 3px solid var(--primary);
@@ -422,7 +420,7 @@ h3 {
 }
 
 #watch > div img {
-    margin: 1rem;
+    margin: 1rem 0;
     width: 90%;
     height: 100%;
     object-fit: cover;

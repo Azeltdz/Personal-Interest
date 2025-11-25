@@ -149,7 +149,7 @@ document.querySelectorAll('.anime, .kdrama').forEach(function(sliderElement) {
         },
         breakpoints: {
             0: { slidesPerView: 1,},
-            768: {slidesPerView: 2,},
+            768: {slidesPerView: 3,},
             991: {slidesPerView: 5,},
         }
     });
