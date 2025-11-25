@@ -1,0 +1,24 @@
+/* Tablet Version Media Queries (425-768px) */
+@media (width <= 820px) { 
+    .check {
+        display: block;
+    }
+    .navbar ul {
+        position: absolute;
+        width: 100%;
+        height: 100dvh;
+        top: 9rem;
+        left: 100%;
+        flex-direction: column;
+        background: hsla(240, 86%, 26%, 0.85);
+        backdrop-filter: blur(6px);
+    }
+    .navbar ul a {
+        font-size: 2rem;
+        margin: 2rem;
+        text-align: center;
+    }
+    #check:checked ~ ul { /* Navbar dropdown */
+        left: 0;
+    }
+}

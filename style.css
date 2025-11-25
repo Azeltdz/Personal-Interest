@@ -15,6 +15,15 @@
     --paragraph: #A8C3D9;
 }
 
+.darkmode {
+    --text: #ebe9fc;
+    --background: #010104;
+    --primary: #8484f6;
+    --secondary: #d7edfe;
+    --accent: #00D4FF;
+    --paragraph: #A8C3D9;
+}
+
 html {
     font-size: 62.5%; /* Makes it easier to express pixels in rem */
     overflow-x: hidden; /* Hide Horizontal Scroll */
@@ -36,17 +45,15 @@ header {
     position: fixed;
     top: 0;
     z-index: 100;
-    backdrop-filter: blur(6px);
 }
 
 h1 {
     font-family: "Alfa Slab One", serif;
-    font-size: 8.1rem;
+    font-size: clamp(1.5rem, 0.2143rem + 6.4286vw, 6rem);
     font-weight: 800;
     color: var(--accent);
     text-transform: uppercase;
     letter-spacing: 0.13em;
-    margin-bottom: 2rem;
     text-shadow: 0 8px 15px rgba(0, 0, 0, 0.7);
 }
 
@@ -64,11 +71,13 @@ section {
     justify-content: center;
     align-items: center;
     padding: 1.5rem 1rem;
+    background: transparent;
 }
 
 .navbar ul{
     display: flex;
     list-style-type: none;
+    transition: all 0.3s;
 }
 
 .navbar a {
@@ -85,6 +94,21 @@ section {
     transform: translateY(20%) scale(1.2);
 }
 
+.check, #check { /* Dropdown Navbar on Tablet Version and Below */
+    font-size: 3rem;
+    color: var(--text);
+    cursor: pointer;
+    line-height: 8rem;
+    margin-right: 4rem;
+    display: none;
+}
+
+.check svg {
+    fill: var(--background);
+    position: absolute;
+    right: 0;
+}
+
 /* Home Page */
 .info {
     display: flex;
@@ -92,28 +116,31 @@ section {
     align-items: center;
     flex-direction: column;
     height: 100vh;
+    flex-wrap: wrap;
+    text-align: center;
 }
 
 .info p {
     font-family: "Alfa Slab One", serif;
-    font-size: 2.3rem;
+    font-size: clamp(0.75rem, 0.3929rem + 1.7857vw, 2rem);
     text-transform: uppercase;
     color: var(--paragraph);
     text-shadow: 0 8px 15px rgba(0, 0, 0, 0.7);
+    padding: 2rem;
 }
 
 .info button {
     color: var(--text);
     background: var(--paragraph);
-    padding: 0.5em;
+    padding: 0.5em 2em;
     font-size: 2rem;
     position: absolute;
     bottom: 0;
     margin-bottom: 5rem;
     border: 3px solid var(--accent);
     border-radius: 2rem;
-    width: 10%;
-    transition: 0.3s ease-out;
+    width: fit-content;
+    transition: all 0.3s ease-out;
     box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.7);
 }
 
@@ -148,12 +175,12 @@ h2 {
 }
 
 p {
-    font-size: 2rem;
+    font-size: clamp(1rem, 0.7143rem + 1.4286vw, 2rem);
     color: var(--text);
 }
 
 figcaption {
-    font-size: 2rem;
+    font-size: clamp(1rem, 0.7143rem + 1.4286vw, 2rem);
     color: var(--paragraph);
     text-align: center;
     padding-bottom: 1rem;
@@ -368,7 +395,7 @@ figure:hover figcaption {
 
 /* Watch Section */
 h3 {
-    font-size: 3rem;
+    font-size: clamp(1rem, 0.4286rem + 2.8571vw, 3rem);
     font-weight: 600;
     color: var(--text);
     text-align: left;
@@ -430,12 +457,11 @@ h3 {
     background: var(--secondary);
     width: 45%;
     height: 40%;
-    padding: 3rem;
+    padding: clamp(1rem, 0.4286rem + 2.8571vw, 3rem);
     box-shadow: 4px 3px 10px var(--accent), -3px -4px 10px var(--accent);
     position: relative;
     animation: popup 0.3s ease;
 }
-
 
 .close-btn {
     cursor: pointer;
@@ -446,9 +472,9 @@ h3 {
     border-radius: 50%;
     background: var(--primary);
     color: var(--background);
-    width: 3rem;
-    height: 3rem;
-    font-size: 2rem;
+    width: clamp(1rem, 0.4286rem + 2.8571vw, 3rem);
+    height: clamp(1rem, 0.4286rem + 2.8571vw, 3rem);
+    font-size: clamp(1rem, 0.7143rem + 1.4286vw, 2rem);
     margin: 1rem;
     transition: all 0.3s ease;
 }
