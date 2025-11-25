@@ -13,6 +13,8 @@
     --secondary: #d7edfe;
     --accent: #00D4FF;
     --paragraph: #A8C3D9;
+    --text-2: clamp(1rem, 0.7143rem + 1.4286vw, 2rem);
+    --text-3: clamp(1rem, 0.4286rem + 2.8571vw, 3rem);
 }
 
 .darkmode {
@@ -106,7 +108,9 @@ section {
 .check svg {
     fill: var(--background);
     position: absolute;
+    top: 0;
     right: 0;
+    transform: translateY(20%);
 }
 
 /* Home Page */
@@ -133,7 +137,7 @@ section {
     color: var(--text);
     background: var(--paragraph);
     padding: 0.5em 2em;
-    font-size: 2rem;
+    font-size: var(--text-2);
     position: absolute;
     bottom: 0;
     margin-bottom: 5rem;
@@ -146,9 +150,8 @@ section {
 
 .info button:hover{
     cursor: pointer;
-    transform: translateY(25%);
+    transform: translateY(25%) scale(1.05);
     background: none;
-    width: 13%;
     border: 3px solid var(--accent);
     color: var(--background);
 }
@@ -167,7 +170,7 @@ section {
 }
 
 h2 {
-    font-size: 4rem;
+    font-size: clamp(1rem, 0.1429rem + 4.2857vw, 4rem);
     font-weight: 600;
     color: var(--text);
     text-transform: uppercase;
@@ -175,12 +178,12 @@ h2 {
 }
 
 p {
-    font-size: clamp(1rem, 0.7143rem + 1.4286vw, 2rem);
+    font-size: var(--text-2);
     color: var(--text);
 }
 
 figcaption {
-    font-size: clamp(1rem, 0.7143rem + 1.4286vw, 2rem);
+    font-size: var(--text-2);
     color: var(--paragraph);
     text-align: center;
     padding-bottom: 1rem;
@@ -214,8 +217,8 @@ figure:hover figcaption {
 }
 
 #food img {
-    margin: 2rem;
-    width: 95%;
+    margin: 2rem 0;
+    width: 90%;
     height: 80%;
     object-fit: cover;
     border-radius: inherit;
@@ -234,7 +237,7 @@ figure:hover figcaption {
 #food button {
     position: absolute;
     top: 50%;
-    font-size: 3rem;
+    font-size: var(--text-3);
     padding: 1rem;
     border: 3px solid var(--primary);
     border-radius: 1rem;
@@ -395,7 +398,7 @@ figure:hover figcaption {
 
 /* Watch Section */
 h3 {
-    font-size: clamp(1rem, 0.4286rem + 2.8571vw, 3rem);
+    font-size: var(--text-3);
     font-weight: 600;
     color: var(--text);
     text-align: left;
@@ -457,7 +460,7 @@ h3 {
     background: var(--secondary);
     width: 45%;
     height: 40%;
-    padding: clamp(1rem, 0.4286rem + 2.8571vw, 3rem);
+    padding: var(--text-3);
     box-shadow: 4px 3px 10px var(--accent), -3px -4px 10px var(--accent);
     position: relative;
     animation: popup 0.3s ease;
@@ -472,9 +475,9 @@ h3 {
     border-radius: 50%;
     background: var(--primary);
     color: var(--background);
-    width: clamp(1rem, 0.4286rem + 2.8571vw, 3rem);
-    height: clamp(1rem, 0.4286rem + 2.8571vw, 3rem);
-    font-size: clamp(1rem, 0.7143rem + 1.4286vw, 2rem);
+    width: var(--text-3);
+    height: var(--text-3);
+    font-size: var(--text-2);
     margin: 1rem;
     transition: all 0.3s ease;
 }
@@ -505,7 +508,7 @@ h3 {
     width: 2em;
     height: 2em;
     cursor: pointer;
-    font-size: 2rem;
+    font-size: var(--text-2);
     z-index: 1000;
     display: none;
     transition: 0.3s ease-out;
@@ -516,4 +519,4 @@ h3 {
     border: 3px solid var(--accent);
     color: var(--accent);
     transform: translateY(-50%) scale(1.25);
-}
+} 
