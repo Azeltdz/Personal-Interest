@@ -170,7 +170,7 @@ section {
 }
 
 h2 {
-    font-size: clamp(1rem, 0.1429rem + 4.2857vw, 4rem);
+    font-size: clamp(2rem, 1.4286rem + 2.8571vw, 4rem);;
     font-weight: 600;
     color: var(--text);
     text-transform: uppercase;
@@ -297,7 +297,7 @@ figure:hover figcaption {
     border: 3px solid var(--primary);
     margin: 3rem auto;
     padding: 2rem;
-    font-size: 2rem;
+    font-size: var(--text-2);
     color: var(--background);
     background: var(--primary);
     transition: all 0.3s ease-out;
@@ -322,14 +322,13 @@ figure:hover figcaption {
     border: 3px solid var(--primary);
     background: var(--primary);
     border-radius: 2rem;
-    width: 23%;
-    aspect-ratio: 3 / 4;
+    width: 20%;
     margin: auto;
     transition: all 0.3s ease-out;
 }
 
 .read-box figure img {
-    margin: 2rem;
+    margin: 2rem 0;
     width: 90%;
     height: 90%;
     object-fit: cover;

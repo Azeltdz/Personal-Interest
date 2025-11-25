@@ -25,8 +25,26 @@
     #check:checked ~ ul { /* Navbar dropdown */
         left: 0;
     }
+    .read-box {
+        flex-direction: column;
+    }
+    .read-box figure {
+        width: 80%;
+        margin: 2rem auto;
+        padding: var(--text-2);
+    }
+}
+
+/* Mobile Media Queries */
+@media (width <= 465px) {
     #food button {
         opacity: 1;
         transform: scale(1);
+    }
+    #scrollTop:hover {
+        border: none;
+        transform: none;
+        color: var(--background);
+        background: var(--primary);
     }
 }
