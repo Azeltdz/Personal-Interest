@@ -84,7 +84,7 @@ section {
 
 .navbar a {
     color: var(--background);
-    font-size: 2rem;
+    font-size: var(--text-2);
     font-weight: 500;
     display: block;
     padding: 0.5rem 3rem;
@@ -232,9 +232,14 @@ figure:hover figcaption {
     animation: fade 0.35s;
 }
 
+.slider {
+    position: relative;
+}
+
 #food button {
     position: absolute;
     top: 50%;
+    transform: scale(0);
     font-size: var(--text-3);
     padding: 1rem;
     border: 3px solid var(--primary);
@@ -243,7 +248,6 @@ figure:hover figcaption {
     transition: all 0.3s ease;
     height: 15%;
     opacity: 0;
-    transform: scale(0);
 }
 .prev {
     left: 15.5%;

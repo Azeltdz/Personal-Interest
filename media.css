@@ -14,7 +14,7 @@
         top: 6rem;
         left: 100%;
         flex-direction: column;
-        background: hsla(240, 86%, 26%, 0.85);
+        background: hsla(240, 86%, 26%, 0.8);
         backdrop-filter: blur(6px);
     }
     .navbar ul a {
@@ -40,7 +40,8 @@
     #food button {
         opacity: 1;
         transform: scale(1);
-        top: 40%;
+        height: 25%;
+        top: 30%;
     }
     #scrollTop:hover {
         border: none;
